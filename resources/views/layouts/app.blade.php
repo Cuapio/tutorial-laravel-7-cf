@@ -34,13 +34,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a href="{{ route('posts.index') }}" class="nav-link">All Posts</a></li>
-                        <li class="nav-item"><a href="{{ route('posts.my') }}" class="nav-link">Mis Posts</a></li>
-                        <li class="nav-item">
-                            <a href="{{ route('posts.create') }}" class="btn btn-outline-primary btn-sm py-0 mt-1">
-                                New Post
-                            </a>
-                        </li>
+                        @auth                            
+                            <li class="nav-item"><a href="{{ route('posts.index') }}" class="nav-link">All Posts</a></li>
+                            <li class="nav-item"><a href="{{ route('posts.my') }}" class="nav-link">Mis Posts</a></li>
+                            <li class="nav-item">
+                                <a href="{{ route('posts.create') }}" class="btn btn-outline-primary btn-sm py-0 mt-1">
+                                    New Post
+                                </a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
